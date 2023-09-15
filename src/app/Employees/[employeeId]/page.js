@@ -15,8 +15,14 @@ import { TabContext, TabList, TabPanel, Tab, Paper } from '@mui/material'
 import SearchBar from "../../Components/SearchBar";
 import Tabs from '@mui/material/Tabs';
 import PropTypes from 'prop-types';
+import Stack from '@mui/material/Stack';
+import Popover from '@mui/material/Popover';
 import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import { styled } from '@mui/material/styles';
+
+
 
 
 
@@ -93,95 +99,172 @@ export default function Page({ params }) {
   };
 
 
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
+
+
+  const VisuallyHiddenInput = styled('input')({
+    clip: 'rect(0 0 0 0)',
+    clipPath: 'inset(50%)',
+    height: 1,
+    overflow: 'hidden',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    whiteSpace: 'nowrap',
+    width: 1,
+  });
+
+
   return (
-    
+
     <div>
-      <SearchBar/>
+      <SearchBar />
       <Box
         component="form"
         sx={{
           '& .MuiTextField-root': { m: 1, width: '100%' },
         }}
         noValidate
-        autoComplete="off"  
+        autoComplete="off"
       >
         <Box >
           <Box sx={{ padding: '10px' }}><h2 variant="h1" > Employee Details </h2></Box>
-          <Box sx={{ display: 'flex', justifyContent: "start" }}>
+          <Box sx={{ display: 'flex', gap: 5, justifyContent: "space-between" }}>
 
-            <Paper elevation={3} sx={{ paddingTop: "30px", marginTop: "1%" }}>
-              <Box>
+            <Box>
+              <Paper elevation={3} sx={{ paddingTop: "30px", marginTop: "1%" }}>
+                <Box>
 
-                <Box sx={{ justifyContent: "center", alignItems: "center", textAlign: 'center', }}>
-                  <Badge badgeContent={<EditIcon sx={{ bgcolor: "#fff", borderRadius: '50%', p: '5px', }} />} >
-                    <Avatar sx={{ width: "150px", height: "150px" }}  color="primary" alt="Remy Sharp" src="../Avtars/profilepic1.jpg" />
-                  </Badge>
+                  <Box sx={{ justifyContent: "center", alignItems: "center", textAlign: 'center', }}>
+
+                    <Button aria-describedby={id} variant="contained" onClick={handleClick} sx={{
+                      bgcolor: '#fff',
+                      ":hover": {
+                        bgcolor: "#fff"
+                      }
+                    }}>
+
+
+                      <Avatar sx={{ width: "150px", height: "150px" }} color="primary" alt="Remy Sharp" src="../Avtars/profilepic1.jpg" />
+
+
+                    </Button>
+
+
+                    <Box>
+                      <Button component="label" variant="contained" startIcon={<EditIcon />} sx={{ m: 2 }}>
+                        Edit
+                        <VisuallyHiddenInput type="file" />
+                      </Button>
+
+                    </Box>
+
+
+
+                    <Popover
+                      id={id}
+                      open={open}
+                      anchorEl={anchorEl}
+                      onClose={handleClose}
+                      anchorOrigin={{
+                        vertical: 'bottom',
+                        horizontal: 'right',
+                      }}
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'left',
+                      }}
+
+                    >
+                      <Typography sx={{ p: 2 }}>
+
+
+                        <Avatar sx={{ width: 400, height: 400 }} variant='rounded' color="primary" alt="Remy Sharp" src="../Avtars/profilepic1.jpg" />
+
+
+                      </Typography>
+
+                    </Popover>
+
+                  </Box>
+
+
+
+                  <Box sx={{ padding: '20px' }}>
+                    <Box sx={{ justifyContent: "center", alignItems: "center", bgcolor: "primary", textAlign: 'center', marginBottom: '20px' }}><h5 variant="h5" > Sachin Pawar  </h5></Box>
+
+                    <Box sx={{ justifyContent: "center", alignItems: "center", bgcolor: "primary", textAlign: 'center', }}>
+                      <TextField
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
+                        id="standard"
+                        label="Registration"
+                        defaultValue={employees.registration}
+                        variant="outlined"
+                        InputProps={{
+                          readOnly: true,
+                        }}
+                      />
+                    </Box>
+
+                    <Box >
+
+                      <TextField
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
+                        id="standard"
+                        label="Date of Birth"
+                        defaultValue={employees.dob}
+                        variant="outlined"
+                        InputProps={{
+                          readOnly: true,
+                        }}
+                      />
+                    </Box>
+                    <Box>
+                      <TextField
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
+                        id="standard"
+                        label="Position"
+                        defaultValue={employees.position}
+                        variant="outlined"
+                        InputProps={{
+                          readOnly: true,
+                        }}
+                      />
+                    </Box>
+                    <Box>
+                      <TextField
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
+                        id="standard"
+                        label="Department"
+                        defaultValue={employees.department}
+                        variant="outlined"
+                        InputProps={{
+                          readOnly: true,
+                        }}
+                      />
+                    </Box>
+
+
+                  </Box>
+
+
                 </Box>
+              </Paper>
+            </Box>
 
-
-
-                <Box sx={{ padding: '20px' }}>
-                  <Box sx={{ justifyContent: "center", alignItems: "center", bgcolor: "primary", textAlign: 'center', marginBottom: '20px' }}><h5 variant="h5" > Sachin Pawar  </h5></Box>
-
-                  <Box sx={{ justifyContent: "center", alignItems: "center", bgcolor: "primary", textAlign: 'center', }}>
-                    <TextField
-
-                      id="standard"
-                      label="Registration"
-                      defaultValue={employees.registration}
-                      variant="outlined"
-                      InputProps={{
-                        readOnly: true,
-                      }}
-                    />
-                  </Box>
-
-                  <Box >
-
-                    <TextField
-
-                      id="standard"
-                      label="Date of Birth"
-                      defaultValue={employees.dob}
-                      variant="outlined"
-                      InputProps={{
-                        readOnly: true,
-                      }}
-                    />
-                  </Box>
-                  <Box>
-                    <TextField
-
-                      id="standard"
-                      label="Position"
-                      defaultValue={employees.position}
-                      variant="outlined"
-                      InputProps={{
-                        readOnly: true,
-                      }}
-                    />
-                  </Box>
-                  <Box>
-                    <TextField
-
-                      id="standard"
-                      label="Department"
-                      defaultValue={employees.department}
-                      variant="outlined"
-                      InputProps={{
-                        readOnly: true,
-                      }}
-                    />
-                  </Box>
-
-
-                </Box>
-
-
-              </Box>
-            </Paper>
-
-            <Box sx={{ width: '100%', marginLeft: "50px" }}>
+            <Box sx={{ width: '100%', }}>
               <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                 <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
                   <Tab label="Information" {...a11yProps(0)} />
@@ -193,24 +276,23 @@ export default function Page({ params }) {
 
               <CustomTabPanel value={value} index={0}>
 
-                <Paper sx={{ padding: "15px", marginLeft: 0, marginBottom: '25px' }} elevation={3}>
+                <Paper sx={{ padding: "15px", marginLeft: '-20px', marginBottom: '25px' }} elevation={3}>
                   <Box sx={{}}>
                     <Box>
 
-                      <h2 variant="h5" > Personal Details <Badge badgeContent={<EditIcon sx={{ bgcolor: "#fff", borderRadius: '50%', alignItems: "end" }} />} > </Badge></h2>
+                      <h2 variant="h5" > Personal Details <Badge badgeContent={<EditIcon sx={{ bgcolor: "#fff", borderRadius: '50%', }} />} > </Badge></h2>
 
                     </Box>
 
 
-                    <Box sx={{ display:'flex', justifyContent:'space-evenly'}}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
                       <TextField
-                      
 
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Full Name"
                         defaultValue={employees.name}
-                        variant="outlined"
                         InputProps={{
                           readOnly: true,
                         }}
@@ -219,7 +301,7 @@ export default function Page({ params }) {
 
 
                       <TextField
-
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Gender"
                         defaultValue={employees.gender}
@@ -229,7 +311,7 @@ export default function Page({ params }) {
                         }}
                       />
                       <TextField
-
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="CreatedAt"
                         defaultValue={employees.createdAt}
@@ -244,9 +326,9 @@ export default function Page({ params }) {
 
 
 
-                    <Box sx={{ display:'flex', justifyContent:'space-evenly'}}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
                       <TextField
-
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="UpdatedAt"
                         defaultValue={employees.updatedAt}
@@ -257,7 +339,7 @@ export default function Page({ params }) {
                       />
 
                       <TextField
-
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Last Logout"
                         defaultValue={employees.lastLogout}
@@ -268,7 +350,7 @@ export default function Page({ params }) {
                       />
 
                       <TextField
-
+                        sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Email Otp"
                         defaultValue={employees.emailOtp}
@@ -300,7 +382,7 @@ export default function Page({ params }) {
                 </Paper>
 
 
-                <Paper sx={{ padding: "15px", marginLeft: 0, marginBottom: '25px' }} elevation={3}>
+                <Paper sx={{ padding: "15px", marginLeft: '-20px', marginBottom: '25px' }} elevation={3}>
                   <Box >
                     <Box
                       component="form" sx={{
@@ -320,9 +402,10 @@ export default function Page({ params }) {
 
 
                         <Box >
-                          <Box  sx={{ display:'flex', justifyContent:'space-evenly'}} >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }} >
 
                             <TextField
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard-number"
                               label="Number"
                               type="number"
@@ -337,7 +420,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Email"
                               defaultValue={employees.email}
@@ -348,7 +431,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="House No."
                               defaultValue={employees.houseNo}
@@ -360,11 +443,11 @@ export default function Page({ params }) {
 
                           </Box>
 
-                          <Box sx={{ display:'flex', justifyContent:'space-evenly'}} >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }} >
 
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Street"
                               defaultValue={employees.street}
@@ -375,7 +458,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="City"
                               defaultValue={employees.city}
@@ -386,7 +469,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="District"
                               defaultValue={employees.district}
@@ -402,10 +485,10 @@ export default function Page({ params }) {
 
                           </Box>
 
-                          <Box sx={{ display:'flex', justifyContent:'space-evenly'}} >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }} >
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="State"
                               defaultValue={employees.state}
@@ -417,7 +500,7 @@ export default function Page({ params }) {
 
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Country"
                               defaultValue={employees.country}
@@ -427,7 +510,7 @@ export default function Page({ params }) {
                               }}
                             />
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Pin Code"
                               defaultValue={employees.pincode}
@@ -468,9 +551,10 @@ export default function Page({ params }) {
 
 
                         <Box >
-                          <Box  >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
                             <TextField
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard-number"
                               label="Number"
                               type="number"
@@ -485,7 +569,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Email"
                               defaultValue={employees.email}
@@ -496,7 +580,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="House No."
                               defaultValue={employees.houseNo}
@@ -508,11 +592,11 @@ export default function Page({ params }) {
 
                           </Box>
 
-                          <Box >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Street"
                               defaultValue={employees.street}
@@ -523,7 +607,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="City"
                               defaultValue={employees.city}
@@ -534,7 +618,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="District"
                               defaultValue={employees.district}
@@ -550,10 +634,10 @@ export default function Page({ params }) {
 
                           </Box>
 
-                          <Box >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="State"
                               defaultValue={employees.state}
@@ -565,7 +649,7 @@ export default function Page({ params }) {
 
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Country"
                               defaultValue={employees.country}
@@ -575,7 +659,7 @@ export default function Page({ params }) {
                               }}
                             />
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Pin Code"
                               defaultValue={employees.pincode}
@@ -598,7 +682,7 @@ export default function Page({ params }) {
                   <Box>
                     <Box
                       component="form" sx={{
-                        '& .MuiTextField-root': { m: 1, width: '25ch' },
+                        '& .MuiTextField-root': { m: 1, width: '100%' },
                       }}
                       noValidate
                       autoComplete="off"
@@ -614,9 +698,10 @@ export default function Page({ params }) {
 
 
                         <Box >
-                          <Box  >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
                             <TextField
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard-number"
                               label="Number"
                               type="number"
@@ -631,7 +716,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Email"
                               defaultValue={employees.email}
@@ -642,7 +727,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="House No."
                               defaultValue={employees.houseNo}
@@ -654,11 +739,11 @@ export default function Page({ params }) {
 
                           </Box>
 
-                          <Box >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Street"
                               defaultValue={employees.street}
@@ -669,7 +754,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="City"
                               defaultValue={employees.city}
@@ -680,7 +765,7 @@ export default function Page({ params }) {
                             />
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="District"
                               defaultValue={employees.district}
@@ -696,10 +781,10 @@ export default function Page({ params }) {
 
                           </Box>
 
-                          <Box >
+                          <Box sx={{ display: 'flex', justifyContent: 'space-evenly' }}>
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="State"
                               defaultValue={employees.state}
@@ -711,7 +796,7 @@ export default function Page({ params }) {
 
 
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Country"
                               defaultValue={employees.country}
@@ -721,7 +806,7 @@ export default function Page({ params }) {
                               }}
                             />
                             <TextField
-
+                              sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Pin Code"
                               defaultValue={employees.pincode}
@@ -761,6 +846,6 @@ export default function Page({ params }) {
 
 
 
-    </div>
-  )
+    </div>
+  )
 }
