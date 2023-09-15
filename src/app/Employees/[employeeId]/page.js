@@ -33,7 +33,7 @@ export default function Page({ params }) {
 
 
     name: "sandeep",
-    email: "abc@gmail.com",
+    email: "abcd@gmail.com",
     number: "1234567890",
     gender: "male",
     createdAt: "today",
