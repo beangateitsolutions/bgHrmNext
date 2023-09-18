@@ -5,7 +5,6 @@
 
 "use client"
 import * as React from 'react';
-import { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Avatar from '@mui/material/Avatar';
@@ -21,6 +20,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { styled } from '@mui/material/styles';
+import { useRef, useState, url} from 'react';
+
 
 
 
@@ -127,6 +128,20 @@ export default function Page({ params }) {
   });
 
 
+  const InputRef=useRef(null);
+  const [image, setImage]= useState(" ");
+
+
+  const handleImageClick = () =>{
+    InputRef.current.click();
+  }
+
+  const handleImageChange = (event) =>{
+    const file = event.target.files[0];
+    setImage(event.target.files[0]);
+  }
+
+
   return (
 
     <div>
@@ -147,7 +162,7 @@ export default function Page({ params }) {
               <Paper elevation={3} sx={{ paddingTop: "30px", marginTop: "1%" }}>
                 <Box>
 
-                  <Box sx={{ justifyContent: "center", alignItems: "center", textAlign: 'center', }}>
+                  <Box sx={{ justifyContent: "center", alignItems: "center", textAlign: 'center', }} >
 
                     <Button aria-describedby={id} variant="contained" onClick={handleClick} sx={{
                       bgcolor: '#fff',
@@ -156,17 +171,22 @@ export default function Page({ params }) {
                       }
                     }}>
 
+                        {/* src={url.createObjectURL(image)}  */}
+                        {/* src="../Avtars/profilepic1.jpg" */}
+                      <Avatar   src="../Avtars/profilepic1.jpg"  sx={{ width: "150px", height: "150px" }} color="primary" alt="Remy Sharp"   />
+                      {/* {image ?
+                      (<Avatar   src={url.createObjectURL(image)}  sx={{ width: "150px", height: "150px" }} color="primary" alt="Remy Sharp"   />):
 
-                      <Avatar sx={{ width: "150px", height: "150px" }} color="primary" alt="Remy Sharp" src="../Avtars/profilepic1.jpg" />
-
-
+                      (<Avatar   src="../Avtars/profilepic1.jpg"  sx={{ width: "150px", height: "150px" }} color="primary" alt="Remy Sharp"   />)
+                      } */}
                     </Button>
 
 
                     <Box>
-                      <Button component="label" variant="contained" startIcon={<EditIcon />} sx={{ m: 2 }}>
+                      <Button component="label" variant="contained" startIcon={<EditIcon />} sx={{ m: 2 }}  onChange={handleImageChange} >
                         Edit
-                        <VisuallyHiddenInput type="file" />
+                        
+                        <VisuallyHiddenInput type="file" ref={InputRef}/>
                       </Button>
 
                     </Box>
@@ -212,6 +232,7 @@ export default function Page({ params }) {
                         label="Registration"
                         defaultValue={employees.registration}
                         variant="outlined"
+                        size="small"
                         InputProps={{
                           readOnly: true,
                         }}
@@ -226,6 +247,7 @@ export default function Page({ params }) {
                         label="Date of Birth"
                         defaultValue={employees.dob}
                         variant="outlined"
+                        size="small"
                         InputProps={{
                           readOnly: true,
                         }}
@@ -238,6 +260,7 @@ export default function Page({ params }) {
                         label="Position"
                         defaultValue={employees.position}
                         variant="outlined"
+                        size="small"
                         InputProps={{
                           readOnly: true,
                         }}
@@ -250,6 +273,7 @@ export default function Page({ params }) {
                         label="Department"
                         defaultValue={employees.department}
                         variant="outlined"
+                        size="small"
                         InputProps={{
                           readOnly: true,
                         }}
@@ -280,7 +304,7 @@ export default function Page({ params }) {
                   <Box sx={{}}>
                     <Box>
 
-                      <h2 variant="h5" > Personal Details <Badge badgeContent={<EditIcon sx={{ bgcolor: "#fff", borderRadius: '50%', }} />} > </Badge></h2>
+                      <h2 variant="h5" > Personal Details <Badge badgeContent={<EditIcon sx={{ bgcolor: "#fff", borderRadius: '50%', marginLeft: '50%' }} />} > </Badge></h2>
 
                     </Box>
 
@@ -292,6 +316,7 @@ export default function Page({ params }) {
                         sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Full Name"
+                        size="small"
                         defaultValue={employees.name}
                         InputProps={{
                           readOnly: true,
@@ -304,6 +329,7 @@ export default function Page({ params }) {
                         sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Gender"
+                        size="small"
                         defaultValue={employees.gender}
                         variant="outlined"
                         InputProps={{
@@ -314,6 +340,7 @@ export default function Page({ params }) {
                         sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="CreatedAt"
+                        size="small"
                         defaultValue={employees.createdAt}
                         variant="outlined"
                         InputProps={{
@@ -331,6 +358,7 @@ export default function Page({ params }) {
                         sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="UpdatedAt"
+                        size="small"
                         defaultValue={employees.updatedAt}
                         variant="outlined"
                         InputProps={{
@@ -342,6 +370,7 @@ export default function Page({ params }) {
                         sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Last Logout"
+                        size="small"
                         defaultValue={employees.lastLogout}
                         variant="outlined"
                         InputProps={{
@@ -353,6 +382,7 @@ export default function Page({ params }) {
                         sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                         id="standard"
                         label="Email Otp"
+                        size="small"
                         defaultValue={employees.emailOtp}
                         variant="outlined"
                         InputProps={{
@@ -414,6 +444,7 @@ export default function Page({ params }) {
                                 shrink: true,
                               }}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -423,6 +454,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Email"
+                              size="small"
                               defaultValue={employees.email}
                               variant="outlined"
                               InputProps={{
@@ -434,6 +466,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="House No."
+                              size="small"
                               defaultValue={employees.houseNo}
                               variant="outlined"
                               InputProps={{
@@ -450,6 +483,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Street"
+                              size="small"
                               defaultValue={employees.street}
                               variant="outlined"
                               InputProps={{
@@ -461,6 +495,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="City"
+                              size="small"
                               defaultValue={employees.city}
                               variant="outlined"
                               InputProps={{
@@ -472,6 +507,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="District"
+                              size="small"
                               defaultValue={employees.district}
                               variant="outlined"
                               InputProps={{
@@ -491,6 +527,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="State"
+                              size="small"
                               defaultValue={employees.state}
                               variant="outlined"
                               InputProps={{
@@ -505,6 +542,7 @@ export default function Page({ params }) {
                               label="Country"
                               defaultValue={employees.country}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -512,6 +550,7 @@ export default function Page({ params }) {
                             <TextField
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
+                              size="small"
                               label="Pin Code"
                               defaultValue={employees.pincode}
                               variant="outlined"
@@ -557,6 +596,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard-number"
                               label="Number"
+                              size="small"
                               type="number"
                               defaultValue={employees.number}
                               InputLabelProps={{
@@ -572,6 +612,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Email"
+                              size="small"
                               defaultValue={employees.email}
                               variant="outlined"
                               InputProps={{
@@ -583,6 +624,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="House No."
+                              size="small"
                               defaultValue={employees.houseNo}
                               variant="outlined"
                               InputProps={{
@@ -599,6 +641,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Street"
+                              size="small"
                               defaultValue={employees.street}
                               variant="outlined"
                               InputProps={{
@@ -610,6 +653,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="City"
+                              size="small"
                               defaultValue={employees.city}
                               variant="outlined"
                               InputProps={{
@@ -621,6 +665,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="District"
+                              size="small"
                               defaultValue={employees.district}
                               variant="outlined"
                               InputProps={{
@@ -640,6 +685,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="State"
+                              size="small"
                               defaultValue={employees.state}
                               variant="outlined"
                               InputProps={{
@@ -654,6 +700,7 @@ export default function Page({ params }) {
                               label="Country"
                               defaultValue={employees.country}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -664,6 +711,7 @@ export default function Page({ params }) {
                               label="Pin Code"
                               defaultValue={employees.pincode}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -710,6 +758,7 @@ export default function Page({ params }) {
                                 shrink: true,
                               }}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -721,6 +770,7 @@ export default function Page({ params }) {
                               label="Email"
                               defaultValue={employees.email}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -732,6 +782,7 @@ export default function Page({ params }) {
                               label="House No."
                               defaultValue={employees.houseNo}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -748,6 +799,7 @@ export default function Page({ params }) {
                               label="Street"
                               defaultValue={employees.street}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -759,6 +811,7 @@ export default function Page({ params }) {
                               label="City"
                               defaultValue={employees.city}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -770,6 +823,7 @@ export default function Page({ params }) {
                               label="District"
                               defaultValue={employees.district}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -789,6 +843,7 @@ export default function Page({ params }) {
                               label="State"
                               defaultValue={employees.state}
                               variant="outlined"
+                              size="small"
                               InputProps={{
                                 readOnly: true,
                               }}
@@ -799,6 +854,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Country"
+                              size="small"
                               defaultValue={employees.country}
                               variant="outlined"
                               InputProps={{
@@ -809,6 +865,7 @@ export default function Page({ params }) {
                               sx={{ bgcolor: "rgba(0, 0, 0, 0.07)", border: "none" }}
                               id="standard"
                               label="Pin Code"
+                              size="small"
                               defaultValue={employees.pincode}
                               variant="outlined"
                               InputProps={{
