@@ -13,9 +13,10 @@ export default function BasicButtons() {
 
   return (
     <>
-      <Container component="main" sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', height: "83vh", width: '100%' }}>
+      <Container component="main" sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', height: "100vh", width: '100vw', bgcolor: "#2a2a72", backgroundImage: "linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)" }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-
+        {/* background-color: #2a2a72; */}
+          {/* background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); */}
 
           <Card sx={{ padding: 5, width: "60%" }}>
 
