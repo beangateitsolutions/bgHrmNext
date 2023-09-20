@@ -290,7 +290,7 @@ export default function RootLayout({ children }) {
               <Container maxWidth="xl" component="main" sx={{ display: 'flex', justifyContent: "center", p:5, alignItems: 'center',  bgcolor: "#2a2a72", backgroundImage: "linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)" }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', height:"88.7vh" }}>
 
-                  <Card sx={{ padding: 5,  borderTopRightRadius: '0', borderBottomRightRadius: '0' }}>
+                  <Card sx={{ padding: 4,  borderTopRightRadius: '0', borderBottomRightRadius: '0' }}>
                     <Box sx={{ display: "flex", alignItems: 'center', justifyContent: "center", }}>
 
                       <img src="../Avtars//Logo1.png" width="60%" height="50%" style={{md:{width:"70%"},sm:{width:"85%"}, xs:{width:"130%"},   }} />
