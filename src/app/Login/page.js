@@ -56,7 +56,7 @@ export default function BasicButtons() {
 
                 <Grid item sx={{ marginBottom: 3 }}>
                   <FormControlLabel control={<Checkbox defaultChecked />} label="Confirm" />
-                  <Link href="" align="right" sx={{ float: "right" }}> Forget Password</Link>
+                  <Link href="#" align="right" sx={{ float: "right" }}> Forget Password</Link>
                 </Grid>
 
                 <Grid item xs={12} sm={8} sx={{ marginBottom: 3 }}>
@@ -75,7 +75,7 @@ export default function BasicButtons() {
            <Box>
            <Grid item sx={{ marginTop: 1 }} align='center'>
                   Don't have account
-                  <Link href="" > Sign Up</Link>
+                  <Link href="#" > Sign Up</Link>
                 </Grid>
            </Box>
           </Card>

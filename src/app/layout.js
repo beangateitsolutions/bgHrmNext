@@ -31,9 +31,9 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import{Search,SearchIconWrapper, SearchIcon, StyledInputBase} from '@mui/material'
+import { useRouter } from "next/router";
 
 
-import { useRouter } from 'next/navigation'
  
 
 
@@ -133,7 +133,15 @@ export default function RootLayout({ children }) {
     setOpen(false);
   };
 
-  const router = useRouter();
+  // const router = useRouter();
+
+
+  
+
+
+
+
+
   return (
     
 <html lang="en">
@@ -154,6 +162,11 @@ export default function RootLayout({ children }) {
     <link href="../css/Sidebar.css" rel="stylesheet"/>
   </head>
   <body className={inter.className}>
+  
+
+  
+  
+  
   <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar position="fixed" open={open}>
