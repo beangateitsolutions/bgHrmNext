@@ -137,21 +137,25 @@ export default function RootLayout({ children }) {
   };
 
 
+//
+  const[ cond, setCond] = React.useState(false);
+  const logedIn = () => {
+    setCond(true);
+  };
 
-  let Setcond = false;
 
-  function logedIn(){
-    Setcond = true;    
-  }
+  //   function logedIn(){
 
+  //     Setcond = true;  
+      
+  // }
 
 
 
   {
-    if (Setcond) {
+    if (cond) {
 
       return (
-
 
 
         <html lang="en">
@@ -225,6 +229,8 @@ export default function RootLayout({ children }) {
                           }}
                         >
                           {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                            
+
                         </ListItemIcon>
 
                         <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
@@ -338,7 +344,7 @@ export default function RootLayout({ children }) {
                         </Grid>
 
                         <Grid item xs={12} sm={8} sx={{ marginBottom: 3 }}>
-                          <Button variant="contained" onClick={logedIn()} fullWidth>Login</Button>
+                          <Button variant="contained" onClick={logedIn} fullWidth>Login</Button>
 
                         </Grid>
                         
@@ -348,7 +354,9 @@ export default function RootLayout({ children }) {
                         <Box> <Divider fullWidth /></Box>
                           <Box sx={{p:2}}>
                             <Grid item sx={{  }} align='center'>
-                              Don't have account
+                          
+
+                              Don't have account  
                               <Link href="#" > Sign Up</Link>
                             </Grid>
                           </Box>
@@ -372,7 +380,7 @@ export default function RootLayout({ children }) {
 
                     </Box>
                   </Card>
-
+               
 
 
                 </Box>
