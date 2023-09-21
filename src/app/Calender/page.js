@@ -48,7 +48,7 @@ function ServerDay(props) {
     >
       <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
     </Badge>
-  ) ;
+  );
 }
 
 export default function DateCalendarServerRequest() {
