@@ -2,6 +2,8 @@
 import * as React from 'react';
 import dayjs from 'dayjs';
 import Badge from '@mui/material/Badge';
+import Box from '@mui/material/Box';
+
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { PickersDay } from '@mui/x-date-pickers/PickersDay';
@@ -32,7 +34,7 @@ function fakeFetch(date, { signal }) {
   });
 }
 
-const initialValue = dayjs('2022-04-17');
+const initialValue = dayjs();
 
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
@@ -44,9 +46,11 @@ function ServerDay(props) {
     <Badge
       key={props.day.toString()}
       overlap="circular"
-      badgeContent={isSelected ? '🌚' : undefined}
+      badgeContent={isSelected ? '💚' : undefined}
+      // color='success'
+      // variant="dot"
     >
-      <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
+      <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day}  />
     </Badge>
   )  ;
 }
@@ -94,8 +98,11 @@ export default function DateCalendarServerRequest() {
   };
 
   return (
+       
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DateCalendar
+      sx={{border:'solid red 2px', width:500}}
+      
         defaultValue={initialValue}
         loading={isLoading}
         onMonthChange={handleMonthChange}
@@ -110,5 +117,6 @@ export default function DateCalendarServerRequest() {
         }}
       />
     </LocalizationProvider>
+    
   );
 }

@@ -138,11 +138,16 @@ export default function RootLayout({ children }) {
 
 
 //
-  const[ cond, setCond] = React.useState(false);
+  const[ cond,setCond] = React.useState(true);
   const logedIn = () => {
     setCond(true);
   };
 
+
+
+
+
+  
 
   //   function logedIn(){
 
@@ -229,7 +234,7 @@ export default function RootLayout({ children }) {
                           }}
                         >
                           {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            
+                        
 
                         </ListItemIcon>
 
@@ -242,7 +247,7 @@ export default function RootLayout({ children }) {
                 <Divider />
 
               </Drawer>
-              <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+              <Box component="main" sx={{ flexGrow: 1, p: 1 }}>
                 <DrawerHeader></DrawerHeader>
 
                 {children}
@@ -354,7 +359,7 @@ export default function RootLayout({ children }) {
                         <Box> <Divider fullWidth /></Box>
                           <Box sx={{p:2}}>
                             <Grid item sx={{  }} align='center'>
-                          
+                         
 
                               Don't have account  
                               <Link href="#" > Sign Up</Link>

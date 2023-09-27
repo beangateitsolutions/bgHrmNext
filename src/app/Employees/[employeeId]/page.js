@@ -32,6 +32,7 @@ import { useRef, useState, url} from 'react';
 
 
 export default function Page({ params }) {
+ 
   const employees = {
     registration: 'smh2546',
     dob: "20/06/1999",
@@ -57,9 +58,8 @@ export default function Page({ params }) {
     city: "Bhopal",
     country: "india",
     pincode: "462003",
-    state: 'Madhya Pradesh'
-  }
-
+    state: 'Madhya Pradesh'
+  }
   function CustomTabPanel(props) {
     const { children, value, index, ...other } = props;
 

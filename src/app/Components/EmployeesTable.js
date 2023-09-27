@@ -1,5 +1,4 @@
 import * as React from "react";
-import SearchBar from "../Components/SearchBar";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -9,23 +8,31 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import Button from "@mui/material/Button";
-import ButtonGroup from "@mui/material/ButtonGroup";
-
+import Box from "@mui/material/Box";
 import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
+import IconButton from "@mui/material/IconButton";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Typography from "@mui/material/Typography";
-import { Avatar, Stack } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Model from "../Components/Model";
 
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import Popover from "@mui/material/Popover";
-import Box from '@mui/material/Box'
-import InfoIcon from '@mui/icons-material/Info';
+
+import InfoIcon from "@mui/icons-material/Info";
+import { Stack } from "@mui/material";
+
+// const style = {
+//   position: "absolute",
+//   top: "50%",
+//   left: "50%",
+//   transform: "translate(-50%, -50%)",
+//   width: 400,
+//   bgcolor: "background.paper",
+//   // border: "2px solid #000",
+//   boxShadow: 24,
+//   p: 4,
+// };
 
 const columns = [
   {
@@ -70,7 +77,7 @@ const columns = [
   {
     id: "empStatus",
     label: "Status",
-    minWidth:20,
+    minWidth: 20,
   },
   {
     id: "empAction",
@@ -242,6 +249,40 @@ const rows = [
 ];
 
 export default function StickyHeadTable() {
+  //   const [openSnack, setOpenSnack] = React.useState(false);
+
+  //   const handleClickSnack = () => {
+  //     setOpenSnack(true);
+  //   };
+
+  //   const handleCloseSnack = (event, reason) => {
+  //     if (reason === "clickaway") {
+  //       return;
+  //     }
+
+  //     setOpenSnack(false);
+  //   };
+
+  //   const action = (
+  //     <React.Fragment>
+  //       <Button color="secondary" size="small" onClick={handleCloseSnack}>
+  //         UNDO
+  //       </Button>
+  //       <IconButton
+  //         size="small"
+  //         aria-label="close"
+  //         color="inherit"
+  //         onClick={handleCloseSnack}
+  //       >
+  //         <CloseIcon fontSize="small" />
+  //       </IconButton>
+  //     </React.Fragment>
+  //   );
+
+  // const [openModel, setOpenModel] = React.useState(false);
+  // const handleOpenModel = () => setOpenModel(true);
+  // const handleCloseModel = () => setOpenModel(false);
+
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
@@ -268,14 +309,22 @@ export default function StickyHeadTable() {
   const id = open ? "simple-popover" : undefined;
   return (
     <>
-      <SearchBar />
       <Paper sx={{ width: "100%", overflow: "hidden" }} elevation={6}>
-        <Typography sx={{ flex: "1 1 100%", ml: 2, mt: 2 }} variant="h5">
-          {" "}
-          Employees
-        </Typography>
+        <Stack direction="row" sx={{ m: 3 }}>
+          <Typography sx={{ flex: "1 1 100%" }} variant="h5">
+            Employees
+          </Typography>
 
-        <TableContainer sx={{ maxHeight: 440 ,maxWidth:'89vw', mx:2 }}>
+          <Button href="Employees/AddEmployees" variant="contained" align="center" sx={{
+            ":hover":{
+              color:'white'
+            }
+          }} endIcon={<AddCircleIcon />}>
+            ADD
+          </Button>
+        </Stack>
+
+        <TableContainer sx={{ maxHeight: 440, maxWidth: "89vw", mx: 2 }}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
@@ -320,16 +369,16 @@ export default function StickyHeadTable() {
                           };
 
                           return (
-                            <TableCell key={column.id}>                   
-                            <div align="center"  >
-                                <Button 
+                            <TableCell key={column.id}>
+                              <div align="center">
+                                <Button
                                   aria-describedby={id}
                                   // variant="ouylined"
                                   onClick={handleClick}
                                 >
-                                   <MoreVertIcon sx={{ color: "#000" }} />
+                                  <MoreVertIcon sx={{ color: "#000" }} />
                                 </Button>
-                                <Popover 
+                                <Popover
                                   id={id}
                                   open={open}
                                   anchorEl={anchorEl}
@@ -343,18 +392,62 @@ export default function StickyHeadTable() {
                                     horizontal: "center",
                                   }}
                                 >
-                                
-
                                   <Paper variant="outlined">
-                                  <Button color="primary">
-                                  <EditIcon />
-                                </Button>
-                                <Button>
-                                  <DeleteIcon sx={{ color: "red" }} />
-                                </Button>
-                                <Button href={`Employees/${row.empId}`}>
-                                  <InfoIcon sx={{ color: "green" }} />
-                                </Button>
+                                    <Button color="primary">
+                                      <EditIcon />
+                                    </Button>
+                                    {/* <div>
+                                      <Button onClick={handleOpenModel}>
+                                        <DeleteIcon sx={{ color: "red" }} />
+                                      </Button>
+                                      <Modal
+                                        open={openModel}
+                                        onClose={handleCloseModel}
+                                        aria-labelledby="modal-modal-title"
+                                        aria-describedby="modal-modal-description"
+                                      >
+                                        <Box sx={style}>
+                                          <Typography
+                                            id="modal-modal-title"
+                                            variant="h6"
+                                            component="h2"
+                                            align="center"
+                                          >
+                                            Delete {row.name}
+                                          </Typography>
+                                          <Typography
+                                            id="modal-modal-description"
+                                            sx={{ mt: 3 }}
+                                            align="center"
+                                          >
+                                            <Button onClick={handleCloseModel}>
+                                              Cancel
+                                            </Button>
+                                            
+
+                                            
+                                              <Button color="error"
+                                                onClick={handleClickSnack}
+                                              >
+                                               Confiram
+                                              </Button>
+                                              <Snackbar
+                                                open={openSnack}
+                                                autoHideDuration={300}
+                                                onClose={handleCloseSnack}
+                                                message="Employee Deleted"
+                                                action={action}
+                                              />
+                                            
+                                          </Typography>
+                                        </Box>
+                                      </Modal>
+                                    </div> */}
+                                    <Model />
+
+                                    <Button href={`Employees/${row.empId}`}>
+                                      <InfoIcon sx={{ color: "green" }} />
+                                    </Button>
                                   </Paper>
                                 </Popover>
                               </div>
