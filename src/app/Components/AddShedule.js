@@ -1,12 +1,16 @@
 import React from 'react'
+
 import Modal from "@mui/material/Modal";
-import DeleteIcon from "@mui/icons-material/Delete";
+
 import Snackbar from "@mui/material/Snackbar";
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+
 import IconButton from "@mui/material/IconButton";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
+import AddCircleIcon from '@mui/icons-material/AddCircle'
 
 const style = {
     position: "absolute",
@@ -19,6 +23,17 @@ const style = {
     boxShadow: 24,
     p: 4,
   };
+
+
+  const buttons = [
+    <Button key="one" sx={{
+      ":hover":{
+        bgcolor:'red'
+      }
+    }}>Task</Button>,
+    <Button key="two">Meeting</Button>,
+    <Button key="three">Reminder</Button>,
+  ];
 
 export default function Model() {
 
@@ -59,8 +74,8 @@ export default function Model() {
     const handleCloseModel = () => setOpenModel(false);
   return (
     <div>
-    <IconButton onClick={handleOpenModel}>
-      <DeleteIcon sx={{ color: "red",align:'center' }} />
+    <IconButton onClick={handleOpenModel} size="large">
+      <AddCircleIcon color='primary'   fontSize="inherit" />
     </IconButton>
     <Modal
       open={openModel}
@@ -75,7 +90,22 @@ export default function Model() {
           component="h2"
           align="center"
         >
-          Delete 
+          <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        '& > *': {
+          m: 1,
+        },
+      }}
+    >
+      <ButtonGroup size="small" aria-label="small button group" 
+     
+      >
+        {buttons}
+      </ButtonGroup>
+    </Box> 
           {/* {row.name} */}
         </Typography>
         <Typography
@@ -83,13 +113,13 @@ export default function Model() {
           sx={{ mt: 3 }}
           align="center"
         >
-          <Button onClick={handleCloseModel}>
+          <Button color="error" onClick={handleCloseModel}>
             Cancel
           </Button>
           
 
           
-            <Button color="error"
+            <Button 
               onClick={handleClickSnack}
             >
              Confiram
@@ -98,7 +128,7 @@ export default function Model() {
               open={openSnack}
               autoHideDuration={300}
               onClose={handleCloseSnack}
-              message="Employee Deleted"
+              message="Event Added"
               action={action}
             />
           

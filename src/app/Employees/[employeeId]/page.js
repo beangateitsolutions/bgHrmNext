@@ -11,7 +11,8 @@ import TextField from '@mui/material/TextField';
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge';
 import EditIcon from '@mui/icons-material/Edit';
-import { TabContext, TabList, TabPanel, Tab, Paper } from '@mui/material'
+import { TabContext, TabList, TabPanel, Tab, Paper , Button} from '@mui/material'
+import ReceiptIcon from '@mui/icons-material/Receipt';
 import SearchBar from "../../Components/SearchBar";
 import Tabs from '@mui/material/Tabs';
 import PropTypes from 'prop-types';
@@ -27,8 +28,8 @@ import Stack from '@mui/material/Stack'
 export default function Page({ params }) {
  
   const employees = {
-    registration: 'smh2546',
-    dob: "20/06/1999",
+    registration: "21",
+    dob: "16/07/2000",
     position: 'Team Leader',
     department: 'It Sector',
 
@@ -106,7 +107,20 @@ export default function Page({ params }) {
         autoComplete="off"  
       >
         <Box >
-          <Box sx={{ padding: '10px' }}><h2 variant="h1" > Employee Details </h2></Box>
+        <Stack direction="row" sx={{ my: 3 }}>
+          <Typography sx={{ flex: "1 1 100%" }} variant="h4">
+            Details
+          </Typography>
+
+          <Button href="Payslip" variant="contained" align="center" sx={{mr:3,
+            ":hover":{
+              color:'white'
+            }
+          }} endIcon={<ReceiptIcon />}>
+            PaySlip
+          </Button>
+        </Stack>
+          {/* <Box sx={{ padding: '10px' }}><h2 variant="h1" > Employee Details </h2></Box> */}
           <Box sx={{ display: 'flex', justifyContent: "start" }}>
 
             <Paper elevation={3} sx={{ paddingTop: "30px", marginTop: "1%" }}>

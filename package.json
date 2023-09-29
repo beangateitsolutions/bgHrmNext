@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coreui/react-chartjs": "^2.1.3",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fontsource/roboto": "^5.0.8",
@@ -19,6 +20,7 @@
     "@mui/x-date-pickers-pro": "^6.13.0",
     "boxicons": "^2.1.4",
     "dayjs": "^1.11.9",
+    "jspdf-invoice-template": "^1.4.3",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",

@@ -1,0 +1,1697 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "HRM",
+    "dateExported": "2023-09-20T10:12:51.656Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "00741a43-5289-4727-ae58-2619a9021e3f",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-09-16T05:16:40.716Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "609c1d3e-4ab3-487b-8b8b-dc76c52b9276",
+            "name": "auth",
+            "containerId": "",
+            "created": "2023-09-16T05:16:40.717Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "06803cdb-f634-4318-a175-8b230fee4ae5",
+            "name": "attendances",
+            "containerId": "",
+            "created": "2023-09-16T05:16:40.718Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "projects",
+            "containerId": "",
+            "created": "2023-09-16T05:16:49.528Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "69d2681a-050d-4f68-97b4-2ed8a1627c57",
+            "name": "employees",
+            "containerId": "00741a43-5289-4727-ae58-2619a9021e3f",
+            "created": "2023-09-16T06:20:06.256Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "6fd5c387-b991-431a-9d84-c110001a75ae",
+            "name": "clients",
+            "containerId": "00741a43-5289-4727-ae58-2619a9021e3f",
+            "created": "2023-09-16T06:20:26.839Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "9e4567f5-dc23-4e14-97a3-309b3a873ba4",
+            "name": "interns",
+            "containerId": "00741a43-5289-4727-ae58-2619a9021e3f",
+            "created": "2023-09-16T06:20:31.096Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "a152dd9e-79f5-421b-a76a-aecc9550bdc6",
+            "name": "project-members",
+            "containerId": "",
+            "created": "2023-09-16T06:21:44.390Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "reports",
+            "containerId": "",
+            "created": "2023-09-20T08:16:24.544Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "c18b2de2-e66a-4d40-b829-1cc881f652a4",
+            "name": "report-messages",
+            "containerId": "",
+            "created": "2023-09-20T09:38:43.113Z",
+            "sortNum": 100000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "594e0e2d-6ecc-4a71-9d12-0819ac28575b",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "69d2681a-050d-4f68-97b4-2ed8a1627c57",
+            "name": "/employees/admins",
+            "url": "{{url}}/users/employees/admins",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-09-16T05:16:40.733Z",
+            "modified": "2023-09-16T05:16:40.733Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "3",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "employeeId",
+                    "value": "4",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "name",
+                    "value": "raj",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "email",
+                    "value": "test@gmail.com",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "gender",
+                    "value": "female",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "disabled",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "name",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "descending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b47c9bf9-8380-4503-8adc-9760e385b92a",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "6fd5c387-b991-431a-9d84-c110001a75ae",
+            "name": "/clients/admins",
+            "url": "{{url}}/users/clients/admins",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-09-16T05:16:40.734Z",
+            "modified": "2023-09-16T05:16:40.734Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "10",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "_id",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "name",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "email",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "gender",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "phone",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "99233472-42c9-47f3-a763-bcd5b55c883f",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "9e4567f5-dc23-4e14-97a3-309b3a873ba4",
+            "name": "/interns/admins ",
+            "url": "{{url}}/users/interns/admins",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2023-09-16T05:16:40.736Z",
+            "modified": "2023-09-16T06:22:21.341Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "10",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "_id",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "name",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "email",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "gender",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "phone",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "bba25867-cb67-4c47-a4ff-67cdf3c7a59f",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "6fd5c387-b991-431a-9d84-c110001a75ae",
+            "name": "/clients/admins/:clientId",
+            "url": "{{url}}/users/clients/admins/6501a6f04d074ac85f207a40",
+            "method": "GET",
+            "sortNum": 7500,
+            "created": "2023-09-16T05:16:40.735Z",
+            "modified": "2023-09-16T05:16:40.735Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e679b5b1-e89c-4adb-8499-f272b28dd8f5",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "9e4567f5-dc23-4e14-97a3-309b3a873ba4",
+            "name": "/interns/admins/:internId",
+            "url": "{{url}}/users/interns/admins/64fec01e328ed7f3d93a0a34",
+            "method": "GET",
+            "sortNum": 7500,
+            "created": "2023-09-16T05:16:40.737Z",
+            "modified": "2023-09-16T05:16:40.737Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7fdb29fd-aa6e-4df2-94b4-5c9c812a732a",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "69d2681a-050d-4f68-97b4-2ed8a1627c57",
+            "name": "/employees/admins",
+            "url": "{{url}}/users/employees/admins",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-09-16T05:16:40.716Z",
+            "modified": "2023-09-16T05:16:40.716Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "rohan"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "1234567889"
+                    },
+                    {
+                        "name": "email",
+                        "value": "rohan@gmail.com"
+                    },
+                    {
+                        "name": "gender",
+                        "value": "male"
+                    },
+                    {
+                        "name": "password",
+                        "value": "123"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\ritur\\Desktop\\person.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e328a9ae-5a02-4a96-b578-95b187879b64",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "6fd5c387-b991-431a-9d84-c110001a75ae",
+            "name": "/clients/admins",
+            "url": "{{url}}/users/clients/admins",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-09-16T05:16:40.723Z",
+            "modified": "2023-09-16T06:26:03.616Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "pinku"
+                    },
+                    {
+                        "name": "email",
+                        "value": "pinku@gmail.com"
+                    },
+                    {
+                        "name": "gender",
+                        "value": "male"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "1234567899"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\ritur\\Desktop\\image.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6b52ee67-dc3f-46ad-b428-9a24bb72c14c",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "9e4567f5-dc23-4e14-97a3-309b3a873ba4",
+            "name": "/intern/admins",
+            "url": "{{url}}/users/interns/admins",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-09-16T05:16:40.726Z",
+            "modified": "2023-09-16T06:24:17.011Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "riya"
+                    },
+                    {
+                        "name": "email",
+                        "value": "riya@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "1233567890"
+                    },
+                    {
+                        "name": "gender",
+                        "value": "male"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\ritur\\Desktop\\image.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0ee29905-6974-4458-a661-eb40d30f8654",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "/admin",
+            "url": "{{url}}/projects/admins",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-16T05:16:49.537Z",
+            "modified": "2023-09-16T05:16:49.537Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "_id",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "client",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withClient",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "status",
+                    "value": "pending",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "duration",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d45a1863-2c64-47f6-b8ad-3dfe876bad61",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "a152dd9e-79f5-421b-a76a-aecc9550bdc6",
+            "name": "/admin",
+            "url": "{{url}}/project-members/admins",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-16T06:27:39.064Z",
+            "modified": "2023-09-16T06:36:54.161Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "project",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withProject",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "employee",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withEmployee",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "intern",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withIntern",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "createdAt",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c6df10e9-e9bf-4b0a-942c-3816f47eb7bd",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "c18b2de2-e66a-4d40-b829-1cc881f652a4",
+            "name": "/admin",
+            "url": "{{url}}/report-messages/admins?report=650aac2cfab1eb6e20ffa4ee",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-09-20T09:38:52.116Z",
+            "modified": "2023-09-20T09:44:34.859Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "report",
+                    "value": "650aac2cfab1eb6e20ffa4ee",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "52aae19b-544d-4c3e-85ed-49f364c56810",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "6fd5c387-b991-431a-9d84-c110001a75ae",
+            "name": "/clients/admins/:clientId",
+            "url": "{{url}}/users/clients/admins/64fec55693c4cb9df6077c95",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-09-16T05:16:40.724Z",
+            "modified": "2023-09-16T05:16:40.724Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "rishika kumari"
+                    },
+                    {
+                        "name": "email",
+                        "value": "rishika@gmail.com"
+                    },
+                    {
+                        "name": "phone",
+                        "value": "09876476768"
+                    },
+                    {
+                        "name": "gender",
+                        "value": "female"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\adars\\Desktop\\flower.avif"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7943f6bd-c4ac-421a-ba7c-458b62b2fc8e",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "9e4567f5-dc23-4e14-97a3-309b3a873ba4",
+            "name": "/interns/admins/:internId",
+            "url": "{{url}}/users/interns/admins/64feca9e2388fc99bb89c057",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-09-16T05:16:40.727Z",
+            "modified": "2023-09-16T06:24:47.433Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "lucky"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\adars\\Desktop\\flower.avif"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "271b08a3-bfae-4ad3-a660-00c8876572ab",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "a152dd9e-79f5-421b-a76a-aecc9550bdc6",
+            "name": "/admins",
+            "url": "{{url}}/project-members/admins",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-09-16T06:29:27.447Z",
+            "modified": "2023-09-16T06:38:40.871Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"project\": \"65053c0bd283fb9a76b455a8\",\n  \"employee\": \"64fc8f2efdfd20926151c162\",\n  \"_intern\": \"64fec01e328ed7f3d93a0a34\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fe6c6bf4-0e6b-4e89-a7d0-89b61cd3755d",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "c18b2de2-e66a-4d40-b829-1cc881f652a4",
+            "name": "/",
+            "url": "{{url}}/report-messages",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-09-20T09:39:01.148Z",
+            "modified": "2023-09-20T10:01:55.750Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "report",
+                    "value": "650aac2cfab1eb6e20ffa4ee",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTUxOTgyNDIsImV4cCI6MTY5NTI4NDY0Mn0.lachhKjdKcOBkEz1p22HChFCBclh2eOfcIWYaO34IFU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "21e512b7-ded2-42fc-b8aa-67048693cfec",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "c18b2de2-e66a-4d40-b829-1cc881f652a4",
+            "name": "/admins",
+            "url": "{{url}}/report-messages/admins",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2023-09-20T09:39:20.853Z",
+            "modified": "2023-09-20T09:54:32.092Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "message",
+                        "value": "Hey, Its fixed now"
+                    },
+                    {
+                        "name": "report",
+                        "value": "650aac2cfab1eb6e20ffa4ee"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\nature.jpg",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\underwater.jpg",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0c2f7feb-0b87-4d26-80f9-dac8d18202cf",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "69d2681a-050d-4f68-97b4-2ed8a1627c57",
+            "name": "/employees/admins/:employeId",
+            "url": "{{url}}/users/employees/admins/64f9a075618a87fbc430c9d5",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-09-16T05:16:40.719Z",
+            "modified": "2023-09-16T05:16:40.719Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"raj\",\n  \"email\":\"raj@gmail.com\",\n  \"password\":\"123\",\n  \"gender\":\"female\",\n  \"phone\":\"1234567890\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b6d55486-f220-48c2-a2f6-c9b7c66ad9c2",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "6fd5c387-b991-431a-9d84-c110001a75ae",
+            "name": "/clients/admins/:clientId",
+            "url": "{{url}}/users/clients/admins/64fec55693c4cb9df6077c95",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-09-16T05:16:40.725Z",
+            "modified": "2023-09-16T05:16:40.725Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "102325f2-6677-443b-ae89-6e3244a90bee",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "9e4567f5-dc23-4e14-97a3-309b3a873ba4",
+            "name": "/interns/admins/:internId",
+            "url": "{{url}}/users/interns/admins/64feca9e2388fc99bb89c057",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-09-16T05:16:40.728Z",
+            "modified": "2023-09-16T05:16:40.728Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "3c549b5c-97a8-4743-8d99-d210dfe3fda3",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "a152dd9e-79f5-421b-a76a-aecc9550bdc6",
+            "name": "/admins/:projectMemberId",
+            "url": "{{url}}/project-members/admins/65054c0aac1960811410bd48",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2023-09-16T06:37:44.743Z",
+            "modified": "2023-09-16T06:38:18.856Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c4e9db83-7a35-4fe9-962e-e34cc4ec9fec",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "c18b2de2-e66a-4d40-b829-1cc881f652a4",
+            "name": "/",
+            "url": "{{url}}/report-messages",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-09-20T09:39:07.932Z",
+            "modified": "2023-09-20T09:55:03.539Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "message",
+                        "value": "Thanks for the help"
+                    },
+                    {
+                        "name": "report",
+                        "value": "650aac2cfab1eb6e20ffa4ee"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\nature.jpg",
+                        "isDisabled": true
+                    },
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\underwater.jpg",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTUxOTgyNDIsImV4cCI6MTY5NTI4NDY0Mn0.lachhKjdKcOBkEz1p22HChFCBclh2eOfcIWYaO34IFU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d75de57c-da63-4bec-a0f0-dea80bf4c269",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "69d2681a-050d-4f68-97b4-2ed8a1627c57",
+            "name": "/employees",
+            "url": "{{url}}/users/employees",
+            "method": "PATCH",
+            "sortNum": 40000,
+            "created": "2023-09-16T05:16:40.722Z",
+            "modified": "2023-09-16T05:16:40.722Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "password",
+                        "value": "123"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\adars\\Desktop\\flower.avif"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhakBnbWFpbC5jb20iLCJoYXNoIjoiMmVmNGRhNDllYiIsImlhdCI6MTY5NDI1ODQ4NywiZXhwIjoxNjk0MzQ0ODg3fQ.FGnH19D1y0PQ2grQatgIZXvSM3mOAkJpHAYZbp5DB8w"
+            },
+            "tests": []
+        },
+        {
+            "_id": "540b4288-7df6-4198-832d-f1f87dde3a0e",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "a152dd9e-79f5-421b-a76a-aecc9550bdc6",
+            "name": "/",
+            "url": "{{url}}/project-members",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-09-16T06:38:48.079Z",
+            "modified": "2023-09-16T06:42:56.360Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "project",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withProject",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withEmployee",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withIntern",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "createdAt",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQ4NDYzODIsImV4cCI6MTY5NDkzMjc4Mn0.d1YtBpBncdX8Qd_fVp4nD14tOfC0S7d9Y0swZxtXulE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b8157c4c-41ff-4fc8-b5e5-458752348250",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "69d2681a-050d-4f68-97b4-2ed8a1627c57",
+            "name": "/employees/admins/:employeId",
+            "url": "{{url}}/users/employees/admins/64f9a075618a87fbc430c9d5",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-09-16T05:16:40.718Z",
+            "modified": "2023-09-16T05:16:40.718Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"disabledReason\":\"testing\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "18f519db-5b94-425a-b8f7-4f9d5b62f833",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "609c1d3e-4ab3-487b-8b8b-dc76c52b9276",
+            "name": "/admins/login",
+            "url": "{{url}}/auth/admins/login",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-09-16T05:16:40.720Z",
+            "modified": "2023-09-20T10:05:08.118Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"test@gmail.com\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b0548d81-c4b7-4a10-8d35-0d47c8002747",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "609c1d3e-4ab3-487b-8b8b-dc76c52b9276",
+            "name": "/employees/login",
+            "url": "{{url}}/auth/employees/login",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-09-16T05:16:40.721Z",
+            "modified": "2023-09-20T10:10:51.564Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"john@gmail.com\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "3badce73-1d2a-41d0-8f02-18d56b2e6b5d",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "609c1d3e-4ab3-487b-8b8b-dc76c52b9276",
+            "name": "/employees/logout",
+            "url": "{{url}}/auth/employees/logout",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-09-20T10:03:34.627Z",
+            "modified": "2023-09-20T10:11:23.121Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"john@gmail.com\",\n  \"password\":\"123\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTUyMDQ2NTIsImV4cCI6MTY5NTI5MTA1Mn0.aZTNQyB7aGAadphSYYIu3gK-R6lGvYJcKQ4MYzijvr8"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec786862-1f7c-4695-9b26-247a03737380",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "/admin/:projectId",
+            "url": "{{url}}/projects/admins/65053d0cd283fb9a76b455b1",
+            "method": "GET",
+            "sortNum": 125000,
+            "created": "2023-09-16T05:30:30.208Z",
+            "modified": "2023-09-16T06:51:25.313Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "b7221da3-c52e-41ab-9da2-fe4f8d2ecaf1",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "06803cdb-f634-4318-a175-8b230fee4ae5",
+            "name": "/",
+            "url": "{{url}}/attendances",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-09-16T05:16:40.729Z",
+            "modified": "2023-09-16T05:16:40.729Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQ0MzQzNzgsImV4cCI6MTY5NDUyMDc3OH0.LTS0hkQepNJAK-RPGqoRwwp9uS6xO-SXBCeENWw_iKM"
+            },
+            "tests": []
+        },
+        {
+            "_id": "cd26bd3e-c3a7-4af1-98c2-dbe6ae7a1b9c",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "06803cdb-f634-4318-a175-8b230fee4ae5",
+            "name": "/",
+            "url": "{{url}}/attendances",
+            "method": "PATCH",
+            "sortNum": 180000,
+            "created": "2023-09-16T05:16:40.730Z",
+            "modified": "2023-09-16T05:16:40.730Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQ0MzQzNzgsImV4cCI6MTY5NDUyMDc3OH0.LTS0hkQepNJAK-RPGqoRwwp9uS6xO-SXBCeENWw_iKM"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d80b36fb-3c12-453e-9ff2-d999381de4e7",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "06803cdb-f634-4318-a175-8b230fee4ae5",
+            "name": "/",
+            "url": "{{url}}/admin/attendances?start=2023-09-10&end=2023-09-12&sortBy=start&sortOrder=ascending",
+            "method": "GET",
+            "sortNum": 190000,
+            "created": "2023-09-16T05:16:40.731Z",
+            "modified": "2023-09-16T05:16:40.731Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withEmployee",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "employee",
+                    "value": "64fc8f2efdfd20926151c163",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "start",
+                    "value": "2023-09-10",
+                    "isPath": false
+                },
+                {
+                    "name": "end",
+                    "value": "2023-09-12",
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "start",
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f23125e3-a023-4997-aa3d-8115ebb24604",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "06803cdb-f634-4318-a175-8b230fee4ae5",
+            "name": "/",
+            "url": "{{url}}/attendances?sortBy=start&sortOrder=ascending",
+            "method": "GET",
+            "sortNum": 200000,
+            "created": "2023-09-16T05:16:40.732Z",
+            "modified": "2023-09-16T05:16:40.732Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "start",
+                    "value": "2023-09-10",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "end",
+                    "value": "2023-09-12",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "start",
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQ0OTk5OTAsImV4cCI6MTY5NDU4NjM5MH0.zUWJAyGrnFvViWbd_xdgGmFO5xlRplgWkhAywer4P5o"
+            },
+            "tests": []
+        },
+        {
+            "_id": "593102e1-3bab-4c73-8d71-c6eaa36857bb",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "/admins",
+            "url": "{{url}}/projects/admins",
+            "method": "POST",
+            "sortNum": 240000,
+            "created": "2023-09-16T05:17:14.997Z",
+            "modified": "2023-09-16T05:31:16.750Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "title",
+                        "value": "Instagram Clone"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Build an instagram clone"
+                    },
+                    {
+                        "name": "client",
+                        "value": "6501a6f04d074ac85f207a40"
+                    },
+                    {
+                        "name": "duration",
+                        "value": "120"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\image.jpg"
+                    },
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\image.webp",
+                        "isDisabled": true
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "e39152a8-0a64-4cfc-aa79-a7b5f7e04e64",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "/admins/:projectId",
+            "url": "{{url}}/projects/admins/65053c0bd283fb9a76b455a8",
+            "method": "PATCH",
+            "sortNum": 250000,
+            "created": "2023-09-16T05:32:03.699Z",
+            "modified": "2023-09-16T05:36:35.705Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"title\": \"Youtube Clone\",\n  \"description\": \"Need to build a youtube clone\",\n  \"duration\": 90,\n  \"status\": \"completed\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d46c8a34-9995-4e44-957d-0f7644386c25",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "/",
+            "url": "{{url}}/projects",
+            "method": "GET",
+            "sortNum": 255000,
+            "created": "2023-09-16T07:05:46.053Z",
+            "modified": "2023-09-16T07:06:05.886Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "_id",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "client",
+                    "value": "",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withClient",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "status",
+                    "value": "pending",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "duration",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQ4NDYzODIsImV4cCI6MTY5NDkzMjc4Mn0.d1YtBpBncdX8Qd_fVp4nD14tOfC0S7d9Y0swZxtXulE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "00e802bd-3212-4f17-93cd-acd084447710",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "829cc192-f287-4045-b052-cf5bb5688026",
+            "name": "/:projectId",
+            "url": "{{url}}/projects/65053c0bd283fb9a76b455a8",
+            "method": "GET",
+            "sortNum": 260000,
+            "created": "2023-09-16T06:51:40.342Z",
+            "modified": "2023-09-16T06:54:49.777Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQ4NDYzODIsImV4cCI6MTY5NDkzMjc4Mn0.d1YtBpBncdX8Qd_fVp4nD14tOfC0S7d9Y0swZxtXulE"
+            },
+            "tests": []
+        },
+        {
+            "_id": "51c1eceb-049e-43d0-b0f3-e82866535fab",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "/admin",
+            "url": "{{url}}/reports/admins",
+            "method": "GET",
+            "sortNum": 290000,
+            "created": "2023-09-20T08:16:56.140Z",
+            "modified": "2023-09-20T08:38:42.165Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "message",
+                    "value": "ONE",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "employee",
+                    "value": "64fc8f2efdfd20926151c162",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "withEmployee",
+                    "value": "true",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "status",
+                    "value": "resolved",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "createdAt",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "c72f309c-2b59-46fd-b4cc-00d42a81c757",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "/admin/:reportId",
+            "url": "{{url}}/reports/admins/650aacfeb78e849f7d22e7cc",
+            "method": "GET",
+            "sortNum": 300000,
+            "created": "2023-09-20T08:20:01.421Z",
+            "modified": "2023-09-20T08:37:43.508Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "ccd3ca25-a41c-4404-96bb-04874afda590",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "/admins/:reportId",
+            "url": "{{url}}/reports/admins/650aac2cfab1eb6e20ffa4ee",
+            "method": "PATCH",
+            "sortNum": 310000,
+            "created": "2023-09-20T08:20:30.603Z",
+            "modified": "2023-09-20T09:55:14.755Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"status\": \"resolved\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTQwMTU4NDF9.N5Nzn7GNi8Z-xru34M4BVJsJ-_x9Gw71pFWh6gGKvtc"
+            },
+            "tests": []
+        },
+        {
+            "_id": "fb944ce0-697f-45fc-9e35-5529152bcc10",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "/",
+            "url": "{{url}}/reports",
+            "method": "POST",
+            "sortNum": 315000,
+            "created": "2023-09-20T08:22:36.589Z",
+            "modified": "2023-09-20T08:27:42.948Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "message",
+                        "value": "I am unable to understand this employee dashboard"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\nature.jpg"
+                    },
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\ritur\\Desktop\\underwater.jpg"
+                    }
+                ]
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTUxOTgyNDIsImV4cCI6MTY5NTI4NDY0Mn0.lachhKjdKcOBkEz1p22HChFCBclh2eOfcIWYaO34IFU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6e0dd264-7f2a-4967-9bdb-681915825bc3",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "/",
+            "url": "{{url}}/reports",
+            "method": "GET",
+            "sortNum": 320000,
+            "created": "2023-09-20T08:21:16.695Z",
+            "modified": "2023-09-20T08:43:54.864Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "limit",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "2",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "message",
+                    "value": "ONE",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "status",
+                    "value": "pending",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortBy",
+                    "value": "createdAt",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sortOrder",
+                    "value": "ascending",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTUxOTgyNDIsImV4cCI6MTY5NTI4NDY0Mn0.lachhKjdKcOBkEz1p22HChFCBclh2eOfcIWYaO34IFU"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6f7ee99b-9b3d-4eee-a5d4-fd2634433fe7",
+            "colId": "0bcf8377-2075-4e95-b118-d4ef1ee346d0",
+            "containerId": "8b992a5e-6d06-4c98-8c8d-a7a8b97428b6",
+            "name": "/:reportId",
+            "url": "{{url}}/reports/650aacfeb78e849f7d22e7cc",
+            "method": "GET",
+            "sortNum": 330000,
+            "created": "2023-09-20T08:22:03.133Z",
+            "modified": "2023-09-20T08:40:12.230Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaGFzaCI6IjJlZjRkYTQ5ZWIiLCJpYXQiOjE2OTUxOTgyNDIsImV4cCI6MTY5NTI4NDY0Mn0.lachhKjdKcOBkEz1p22HChFCBclh2eOfcIWYaO34IFU"
+            },
+            "tests": []
+        }
+    ]
+}

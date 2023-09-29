@@ -1,0 +1,14 @@
+{
+  "cSpell.words": [
+    "atleast",
+    "dateonly",
+    "datetime",
+    "mongoid",
+    "uploaders"
+  ],
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#282E36",
+    "titleBar.activeBackground": "#38404C",
+    "titleBar.activeForeground": "#F9FAFB"
+  }
+}

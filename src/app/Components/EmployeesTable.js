@@ -22,17 +22,7 @@ import Popover from "@mui/material/Popover";
 import InfoIcon from "@mui/icons-material/Info";
 import { Stack } from "@mui/material";
 
-// const style = {
-//   position: "absolute",
-//   top: "50%",
-//   left: "50%",
-//   transform: "translate(-50%, -50%)",
-//   width: 400,
-//   bgcolor: "background.paper",
-//   // border: "2px solid #000",
-//   boxShadow: 24,
-//   p: 4,
-// };
+
 
 const columns = [
   {
@@ -249,39 +239,7 @@ const rows = [
 ];
 
 export default function StickyHeadTable() {
-  //   const [openSnack, setOpenSnack] = React.useState(false);
-
-  //   const handleClickSnack = () => {
-  //     setOpenSnack(true);
-  //   };
-
-  //   const handleCloseSnack = (event, reason) => {
-  //     if (reason === "clickaway") {
-  //       return;
-  //     }
-
-  //     setOpenSnack(false);
-  //   };
-
-  //   const action = (
-  //     <React.Fragment>
-  //       <Button color="secondary" size="small" onClick={handleCloseSnack}>
-  //         UNDO
-  //       </Button>
-  //       <IconButton
-  //         size="small"
-  //         aria-label="close"
-  //         color="inherit"
-  //         onClick={handleCloseSnack}
-  //       >
-  //         <CloseIcon fontSize="small" />
-  //       </IconButton>
-  //     </React.Fragment>
-  //   );
-
-  // const [openModel, setOpenModel] = React.useState(false);
-  // const handleOpenModel = () => setOpenModel(true);
-  // const handleCloseModel = () => setOpenModel(false);
+ 
 
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -312,10 +270,10 @@ export default function StickyHeadTable() {
       <Paper sx={{ width: "100%", overflow: "hidden" }} elevation={6}>
         <Stack direction="row" sx={{ m: 3 }}>
           <Typography sx={{ flex: "1 1 100%" }} variant="h5">
-            Employees
+            Employees 
           </Typography>
 
-          <Button href="Employees/AddEmployees" variant="contained" align="center" sx={{
+          <Button href="Employees/Add" variant="contained" align="center" sx={{
             ":hover":{
               color:'white'
             }
@@ -393,9 +351,9 @@ export default function StickyHeadTable() {
                                   }}
                                 >
                                   <Paper variant="outlined">
-                                    <Button color="primary">
+                                    <IconButton color="primary">
                                       <EditIcon />
-                                    </Button>
+                                    </IconButton>
                                     {/* <div>
                                       <Button onClick={handleOpenModel}>
                                         <DeleteIcon sx={{ color: "red" }} />
@@ -445,9 +403,9 @@ export default function StickyHeadTable() {
                                     </div> */}
                                     <Model />
 
-                                    <Button href={`Employees/${row.empId}`}>
+                                    <IconButton href={`Employees/${row.empId}`}>
                                       <InfoIcon sx={{ color: "green" }} />
-                                    </Button>
+                                    </IconButton>
                                   </Paper>
                                 </Popover>
                               </div>
