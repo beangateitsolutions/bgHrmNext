@@ -12,14 +12,12 @@ import { Inter } from "next/font/google";
 import * as React from 'react';
 
 import { styled, useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -30,11 +28,16 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import { Search, SearchIconWrapper, SearchIcon, StyledInputBase } from '@mui/material'
+import { useRouter } from "next/router";
+import { Card, Container, Box, Grid, TextField, FormControl, FormControlLabel, Checkbox, Button, checkboxClasses, Divider } from '@mui/material';
+import ImageListItem from '@mui/material/ImageListItem';
+import Link from 'next/link';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import Script from "next/script";
 
 
-
-import { useRouter } from 'next/navigation'
- 
 
 
 const drawerWidth = 180;
@@ -108,8 +111,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const sideBarMenu = [
   "Dashboard",
   "Employees",
-  "Calender",
-  
+  "Calender"
 ]
 
 
@@ -134,103 +136,387 @@ export default function RootLayout({ children }) {
     setOpen(false);
   };
 
-  const router = useRouter();
-  return (
-    
-<html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>BeanGate HRM</title>
-    <link
-          href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-          rel="stylesheet"
-        ></link>
 
-<link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-        ></link>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
-    <link href="../css/Sidebar.css" rel="stylesheet"/>
-  </head>
-  <body className={inter.className}>
-  <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar position="fixed" open={open}>
-     
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: 'none' }),
-            }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Beangate
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
-          </IconButton>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          {/* {['Inbox', 'Starred', 'Send email', 'Drafts'] */}
-          {sideBarMenu.map((text, index) => (
-            <ListItem key={text} disablePadding sx={{ display: 'block' }}>
-              
-              <ListItemButton href={text}
-                sx={{
-                  minHeight: 48,
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                }}>
-                <ListItemIcon
-                  sx={{
-                    minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center',
-                  }}
+//
+  const[ cond,setCond] = React.useState(true);
+  const logedIn = () => {
+    setCond(true);
+  };
+
+
+
+
+
+  
+
+  //   function logedIn(){
+
+  //     Setcond = true;  
+      
+  // }
+
+
+
+  {
+    if (cond) {
+
+      return (
+
+
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Bootstrap demo</title>
+            <link
+              href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+              rel="stylesheet"
+            ></link>
+
+            <link
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+            ></link>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+            <link href="../css/Sidebar.css" rel="stylesheet" />
+          </head>
+
+          <body className={inter.className}>
+
+
+
+
+            <Box sx={{ display: 'flex' }}>
+              <CssBaseline />
+              <AppBar position="fixed" open={open}>
+
+                <Toolbar>
+                  <IconButton
+                    color="inherit"
+                    aria-label="open drawer"
+                    onClick={handleDrawerOpen}
+                    edge="start"
+                    sx={{
+                      marginRight: 5,
+                      ...(open && { display: 'none' }),
+                    }}
                   >
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-              
-                <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                 
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        
-      </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-        <DrawerHeader></DrawerHeader>
-            
-      {children}
-        
-      </Box>
-    </Box>
-    
-    
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+                    <MenuIcon />
+                  </IconButton>
+                  <Typography variant="h6" noWrap component="div">
+                    Beangate
+                  </Typography>
+                </Toolbar>
+              </AppBar>
+              <Drawer variant="permanent" open={open}>
+                <DrawerHeader>
+                  <IconButton onClick={handleDrawerClose}>
+                    {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+                  </IconButton>
+                </DrawerHeader>
+                <Divider />
+                <List>
+                  {/* {['Inbox', 'Starred', 'Send email', 'Drafts'] */}
+                  {sideBarMenu.map((text, index) => (
+                    <ListItem key={text} disablePadding sx={{ display: 'block' }}>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-  </body>
-</html>
-  );
+                      <ListItemButton href={text}
+                        sx={{
+                          minHeight: 48,
+                          justifyContent: open ? 'initial' : 'center',
+                          px: 2.5,
+                        }}>
+                        <ListItemIcon
+                          sx={{
+                            minWidth: 0,
+                            mr: open ? 3 : 'auto',
+                            justifyContent: 'center',
+                          }}
+                        >
+                          {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                        
+
+                        </ListItemIcon>
+
+                        <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+                </List>
+                <Divider />
+
+              </Drawer>
+              <Box component="main" sx={{ flexGrow: 1, p: 1 }}>
+                <DrawerHeader></DrawerHeader>
+
+                {children}
+
+              </Box>
+            </Box>
+
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+          </body>
+        </html>
+      );
+
+
+    } else {
+
+    
+      return (
+
+
+
+
+        <html lang="en">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Bootstrap demo</title>
+            <link
+              href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+              rel="stylesheet"
+            ></link>
+
+            <link
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+            ></link>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+            <link href="../css/Sidebar.css" rel="stylesheet" />
+          
+          </head>
+
+          <body className={inter.className}>
+
+            <>
+              <Container maxWidth="xl" component="main" sx={{ display: 'flex', justifyContent: "center", p:5, alignItems: 'center',  bgcolor: "#2a2a72", backgroundImage: "linear-gradient(315deg, #2a2a72 0%, #009ffd 74%)" }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', height:"88.7vh" }}>
+
+                  <Card sx={{ padding: 5,  borderTopRightRadius: '0', borderBottomRightRadius: '0' }}>
+                    <Box sx={{ display: "flex", alignItems: 'center', justifyContent: "center", }}>
+
+                      <img src="../Avtars//Logo1.png" width="60%" height="50%" style={{md:{width:"70%"},sm:{width:"85%"}, xs:{width:"130%"},   }} />
+
+                    </Box>
+
+                    <Typography variant="bold" component="h1" sx={{ marginBottom: 6, mt: 4, textAlign: "Center", justifyContent: 'center', fontSize:{ lg:'24px', md:'18px', sm:'16px', xs:'14px',} }} >
+                      
+                      Welcome Again 
+
+                    </Typography>
+
+                    <Box component="form" >
+                      <Grid Container spacing={1}>
+
+                        <Grid item sx={{ marginBottom: 3 }}>
+                          <TextField
+                            autoComplete='Given_name'
+                            name='EmailAddress'
+                            required
+                            fullWidth
+                            Id="EmailAddress"
+                            label="EmailAddress"
+                            autoFocus
+                            size="small"
+
+                          />
+                        </Grid>
+                        <Grid item sx={{ marginBottom: 3 }} >
+                          <TextField
+                            autoComplete='Given_name'
+                            name='Password'
+                            required
+                            fullWidth
+                            Id="Password"
+                            label="Password"
+                            autoFocus
+                            size="small"
+                          />
+                        </Grid>
+
+                        <Grid item sx={{ marginBottom: 3 }}>
+                          <FormControlLabel control={<Checkbox defaultChecked />} label="Confirm" />
+                          <Link href="#" align="right" sx={{ float: "right" }}> Forget Password</Link>
+                        </Grid>
+
+                        <Grid item xs={12} sm={8} sx={{ marginBottom: 3 }}>
+                          <Button variant="contained" onClick={logedIn} fullWidth>Login</Button>
+
+                        </Grid>
+                        
+
+                      </Grid>
+
+                        <Box> <Divider fullWidth /></Box>
+                          <Box sx={{p:2}}>
+                            <Grid item sx={{  }} align='center'>
+                         
+
+                              Don't have account  
+                              <Link href="#" > Sign Up</Link>
+                            </Grid>
+                          </Box>
+
+
+                    </Box>
+                    
+                  </Card>
+
+
+                  <Card sx={{ width: "100%", borderTopLeftRadius: '0', borderBottomLeftRadius: '0',  display:{xs: 'none', sm: 'none', md: 'block'}}}>
+                 
+                    <Box >
+
+                      <ImageListItem sx={{ alignItems: 'center', width:"95%"  }}>
+
+                        <img src="../Avtars/loginpage.jpg" />
+
+                      </ImageListItem>
+
+
+                    </Box>
+                  </Card>
+               
+
+
+                </Box>
+
+              </Container>
+
+            </>
+
+         
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+          </body>
+        </html>
+      );
+
+    }
+  }
+
+
+
+
+
+  //   return (
+
+
+
+  // <html lang="en">
+  //   <head>
+  //     <meta charset="utf-8"/>
+  //     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  //     <title>Bootstrap demo</title>
+  //     <link
+  //           href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+  //           rel="stylesheet"
+  //         ></link>
+
+  // <link
+  //           href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+  //           rel="stylesheet"
+  //         ></link>
+  //     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"/>
+  //     <link href="../css/Sidebar.css" rel="stylesheet"/>
+  //   </head>
+
+  // <body className={inter.className}>
+
+
+
+
+
+
+  //   <Box sx={{ display: 'flex' }}>
+  //       <CssBaseline />
+  //       <AppBar position="fixed" open={open}>
+
+  //         <Toolbar>
+  //           <IconButton
+  //             color="inherit"
+  //             aria-label="open drawer"
+  //             onClick={handleDrawerOpen}
+  //             edge="start"
+  //             sx={{
+  //               marginRight: 5,
+  //               ...(open && { display: 'none' }),
+  //             }}
+  //           >
+  //             <MenuIcon />
+  //           </IconButton>
+  //           <Typography variant="h6" noWrap component="div">
+  //             Beangate
+  //           </Typography>
+  //         </Toolbar>
+  //       </AppBar>
+  //       <Drawer variant="permanent" open={open}>
+  //         <DrawerHeader>
+  //           <IconButton onClick={handleDrawerClose}>
+  //             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+  //           </IconButton>
+  //         </DrawerHeader>
+  //         <Divider />
+  //         <List>
+  //           {/* {['Inbox', 'Starred', 'Send email', 'Drafts'] */}
+  //           {sideBarMenu.map((text, index) => (
+  //             <ListItem key={text} disablePadding sx={{ display: 'block' }}>
+
+  //               <ListItemButton href={text}
+  //                 sx={{
+  //                   minHeight: 48,
+  //                   justifyContent: open ? 'initial' : 'center',
+  //                   px: 2.5,
+  //                 }}>
+  //                 <ListItemIcon
+  //                   sx={{
+  //                     minWidth: 0,
+  //                     mr: open ? 3 : 'auto',
+  //                     justifyContent: 'center',
+  //                   }}
+  //                   >
+  //                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+  //                 </ListItemIcon>
+
+  //                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
+
+  //               </ListItemButton>
+  //             </ListItem>
+  //           ))}
+  //         </List>
+  //         <Divider />
+
+  //       </Drawer>
+  //       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+  //         <DrawerHeader></DrawerHeader>
+
+  //       {children}
+
+  //       </Box>
+  //   </Box>
+
+
+
+  //     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  //     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+  //     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  //     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+  //     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  //   </body>
+  // </html>
+  //   );
 }
